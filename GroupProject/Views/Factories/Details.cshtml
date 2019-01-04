@@ -1,0 +1,51 @@
+﻿@model GroupProject.Models.Factory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Factory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FactoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FactoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FactoryAdress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FactoryAdress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FactoryPhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FactoryPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FactoryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

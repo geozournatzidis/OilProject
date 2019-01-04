@@ -1,0 +1,70 @@
+﻿@model IEnumerable<GroupProject.Models.OilPress>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Productions</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.UsersAccount.LastName)
+        </th>*@       
+        <th>
+            @Html.DisplayNameFor(model => model.Factory.FactoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OilPressName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OliveType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlivesWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OilOutput)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductionDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>      
+        @*<td>
+            @Html.DisplayNameFor(model => model.UsersAccount.LastName)
+        </td>*@        
+        <td>
+            @Html.DisplayFor(modelItem => item.Factory.FactoryName)
+        </td>       
+        <td>
+            @Html.DisplayFor(modelItem => item.OilPressName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OliveType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OlivesWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OilOutput)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductionDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OilPressID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OilPressID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OilPressID })
+        </td>
+    </tr>
+}
+
+</table>

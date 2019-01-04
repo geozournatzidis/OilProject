@@ -1,0 +1,52 @@
+﻿@model IEnumerable<GroupProject.Models.Factory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Factories</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FactoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FactoryAdress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FactoryPhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FactoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FactoryAdress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FactoryPhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FactoryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FactoryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FactoryID})
+        </td>
+    </tr>
+}
+
+</table>

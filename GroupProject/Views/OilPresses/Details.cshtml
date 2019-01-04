@@ -1,0 +1,59 @@
+﻿@model GroupProject.Models.OilPress
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OilPress</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OilPressName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OilPressName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OliveType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OliveType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OlivesWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlivesWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OilOutput)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OilOutput)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductionDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OilPressID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

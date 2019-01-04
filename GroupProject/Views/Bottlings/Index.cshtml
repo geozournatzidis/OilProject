@@ -1,0 +1,65 @@
+﻿@model IEnumerable<GroupProject.Models.Bottling>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Factory.FactoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BottlingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BottlingLotNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Factory.FactoryName)
+        </td>      
+        <td>
+            @Html.DisplayFor(modelItem => item.BottlingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BottlingLotNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BottlingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BottlingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BottlingID })
+        </td>
+    </tr>
+}
+
+</table>
